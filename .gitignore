@@ -1,12 +1,18 @@
-# Maven
-target/
-
 # IntelliJ
 .idea/
 *.iml
+
+# Build output
+out/
+target/
+build/
+
+# Kotlin / Java
+*.class
 
 # Logs
 *.log
 
 # OS
 .DS_Store
+Thumbs.db
