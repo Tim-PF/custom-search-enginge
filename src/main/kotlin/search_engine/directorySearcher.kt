@@ -9,6 +9,8 @@ fun readfile(file: File) {
 fun listOfFiles() {
     val files = File("data").listFiles()
     files?.forEach {
+        if (it.isDirectory) return@forEach
+        if (!(it.name.contains(".txt"))) return@forEach
         println(it.name)
         readfile(it)
     }
