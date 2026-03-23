@@ -2,8 +2,8 @@ package search_engine
 
 import java.io.File
 
-fun readfile(file: File) {
-    println(file.readText())
+fun readfile(file: File) : String {
+    return file.readText()
 }
 
 fun listOfFiles() {
@@ -12,6 +12,6 @@ fun listOfFiles() {
         if (it.isDirectory) return@forEach
         if (!(it.name.contains(".txt"))) return@forEach
         println(it.name)
-        readfile(it)
+        tokenize(readfile(it))
     }
 }
