@@ -1,6 +1,6 @@
 package search_engine
 
-fun tokenize(text: String) {
+fun tokenize(text: String): List<String> {
     val wordsList = text.split(" ")
-    println(wordsList)
+    return wordsList
 }
