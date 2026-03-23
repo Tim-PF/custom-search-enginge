@@ -12,6 +12,6 @@ fun listOfFiles() {
         if (it.isDirectory) return@forEach
         if (!(it.name.contains(".txt"))) return@forEach
         println(it.name)
-        tokenize(readfile(it))
+        val tokenList = tokenize(readfile(it))
     }
 }
