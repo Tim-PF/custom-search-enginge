@@ -9,11 +9,8 @@ fun readfile(file: File) : String {
 fun listOfFiles() {
     val files = File("data").listFiles() ?: return
     val fileList = mapFiles(files)
-    println(fileList)
-    files.forEach {
-        if (it.isDirectory) return@forEach
-        if (!(it.name.contains(".txt"))) return@forEach
-        println(it.name)
-        val tokenList = tokenize(readfile(it))
+    fileList.forEach {
+        println(it.value.name)
+        val tokenList = tokenize(readfile(it.value))
     }
 }
