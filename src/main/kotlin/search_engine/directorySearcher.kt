@@ -6,12 +6,11 @@ fun readfile(file: File) : String {
     return file.readText()
 }
 
-fun listOfFiles() {
-    val files = File("data").listFiles() ?: return
-    val fileList = mapFiles(files)
+fun listOfFiles() : Array<File>? {
+    return File("data").listFiles()
+ /*   val fileList = mapFiles(files)
     val index = mutableMapOf<String, Set<Int>>()
     fileList.forEach {
-        println(it.value.name)
         val tokenList = tokenize(readfile(it.value))
         for (word in tokenList) {
             if (index.containsKey(word)) {
@@ -20,6 +19,5 @@ fun listOfFiles() {
                 index[word] = setOf(it.key)
             }
         }
-    }
-    println(index);
+   } */
 }
