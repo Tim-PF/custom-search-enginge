@@ -9,7 +9,7 @@ fun readfile(file: File) : String {
 fun listOfFiles() {
     val files = File("data").listFiles() ?: return
     val fileList = mapFiles(files)
-    val index = mutableMapOf<String,List<Int>>()
+    val index = mutableMapOf<String, Set<Int>>()
     fileList.forEach {
         println(it.value.name)
         val tokenList = tokenize(readfile(it.value))
@@ -17,7 +17,7 @@ fun listOfFiles() {
             if (index.containsKey(word)) {
                 index[word] = index[word]!!.plus(it.key)
             } else {
-                index[word] = listOf(it.key)
+                index[word] = setOf(it.key)
             }
         }
     }
