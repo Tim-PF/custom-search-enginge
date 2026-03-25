@@ -21,3 +21,45 @@ A List allows me to:
 - keep duplicates
 Keeping duplicates might be important later, for example when implementing ranking based on word frequency.
 A Set, on the other hand, would remove duplicates and therefore lose important information.
+
+
+# Step 3 – Indexing
+
+In this step, I implemented a basic indexing mechanism for the search engine.
+
+The goal is to process all available text files and create a structure that allows fast lookup of tokens across documents.
+
+## Current Approach
+
+I used two maps:
+
+- One map assigns each text file a unique integer ID  
+- Another map links each token to the IDs of the files in which it appears  
+
+This results in a simple inverted index.
+
+## Process
+
+For each file in the `data/` directory:
+
+1. The file is read as text  
+2. The content is tokenized into individual words  
+3. Each token is added to the index:
+   - If the token already exists, the current document ID is added  
+   - If not, a new entry is created with the document ID  
+
+## Result
+
+The index structure maps tokens to the set of document IDs where they occur.
+
+### Example
+
+"kotlin" -> [0, 2]
+"java" -> [1]
+
+This allows efficient lookup of which documents contain a given word.
+
+## Notes
+- Currently, only `.txt` files are supported  
+- The indexing logic is implemented directly and will be refactored into a dedicated function in the next step  
+- The focus of this step was correctness and functionality, not code structure  
