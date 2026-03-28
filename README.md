@@ -56,8 +56,15 @@ The index structure maps tokens to the set of document IDs where they occur.
 
 "kotlin" -> [0, 2]
 "java" -> [1]
-
 This allows efficient lookup of which documents contain a given word.
+
+# Step 4 – Query
+
+No search engine is complete without supporting user queries.
+
+In this step, I applied the concepts from the previous stages and tokenized the user input. This ensures that the query is processed in the same way as the indexed documents.
+
+With the query now tokenized, the next step is to compare the query tokens against the indexed tokens and find matching documents. Different algorithms can later be used to rank and return the most relevant results.
 
 ## Notes
 - Currently, only `.txt` files are supported  
