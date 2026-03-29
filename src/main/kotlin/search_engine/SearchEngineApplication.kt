@@ -5,6 +5,11 @@ fun main() {
     val fileMap = mapFiles(files)
     val index = buildIndex(fileMap)
     val query = askQuery()
+    println(fileMap)
     println(query)
     println(index)
+    val orResults = orSearch(index, query)
+    printResults(fileMap, orResults)
+
+
 }
