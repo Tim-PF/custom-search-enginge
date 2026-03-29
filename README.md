@@ -66,6 +66,19 @@ In this step, I applied the concepts from the previous stages and tokenized the 
 
 With the query now tokenized, the next step is to compare the query tokens against the indexed tokens and find matching documents. Different algorithms can later be used to rank and return the most relevant results.
 
+# Step 5 – Ranking Results
+
+For the initial version of the search results, I kept the implementation simple.
+
+I created a function that retrieves all documents containing at least one token from the query (OR search).  
+After that, I ranked the results based on how many query tokens were found in each document.
+
+This means that documents matching more query terms are considered more relevant and are displayed first.
+
+With this step completed, I now have a fully functional basic search engine.
+
+The next step will be to implement exact match queries.
+
 ## Notes
 - Currently, only `.txt` files are supported  
 - The indexing logic is implemented directly and will be refactored into a dedicated function in the next step  
