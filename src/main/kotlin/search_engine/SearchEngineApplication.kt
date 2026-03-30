@@ -9,7 +9,9 @@ fun main() {
     println(query)
     println(index)
     val orResults = orSearch(index, query)
+    val andResults = andSearch(index, query)
     printResults(fileMap, orResults)
+    printResults(fileMap, andResults)
 
 
 }
