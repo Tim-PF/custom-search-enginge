@@ -79,6 +79,12 @@ With this step completed, I now have a fully functional basic search engine.
 
 The next step will be to implement exact match queries.
 
+# Step 6 – Ranking Results by Exact Matches
+
+I implemented an AND search by returning only the documents that contain all tokens from the query.
+
+This is done by computing the intersection of the document sets for each query token. As a result, only documents that match every term are included in the final result.
+
 ## Notes
 - Currently, only `.txt` files are supported  
 - The indexing logic is implemented directly and will be refactored into a dedicated function in the next step  
